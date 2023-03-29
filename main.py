@@ -17,26 +17,27 @@ unbalanced_list = [
 
 
 class Stack(list):
+#проверка стека на пустоту. Метод возвращает True или False
     def is_empty(self):
         return len(self) == 0
 
-
+#добавляет новый элемент на вершину стека. Метод ничего не возвращает
     def push(self, el):
         self.append(el)
 
-
+#удаляет верхний элемент стека. Стек изменяется. Метод возвращает верхний элемент стека
     def pop(self):
         if not self.is_empty():
             items = self[-1]
             self.__delitem__(-1)
             return items
 
-
+#возвращает верхний элемент стека, но не удаляет его. Стек не меняется
     def peek(self):
         if not self.is_empty():
             return self[-1]
 
-
+#возвращает количество элементов в стеке
     def size(self):
         return len(self)
 
